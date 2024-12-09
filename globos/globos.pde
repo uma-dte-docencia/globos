@@ -5,8 +5,8 @@ class Globo
   {
    x=_x;
    y=_y; 
-   vx=random(-0.25,0.25);
-   vy=random(-2,-0.5);
+   vx=random(-1.25,1.25);
+   vy=random(5,-0.5);
   }
 
   void update()
@@ -17,7 +17,7 @@ class Globo
 
   void dibujate()
   {
-      ellipse(x,y,100,100);
+      ellipse(x,y,1000,1000);
   }
   
 }
