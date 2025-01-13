@@ -17,7 +17,12 @@ class Globo
 
   void dibujate()
   {
-      ellipse(x,y,100,100);
+      ellipse(x,y,200,200);
+
+      ellipse(x+200,y,200,200);
+      fill(0);  //negro
+      ellipse(x,y, 50, 50);
+      fill(255);
   }
   
 }
@@ -39,9 +44,11 @@ void draw()
     globos.get(i).update();
     globos.get(i).dibujate();
   }
+  
 }
 
 void mousePressed()
 {
   globos.add(new Globo(mouseX,mouseY));
+  System.out.printf("Hola Ber ");
 }
