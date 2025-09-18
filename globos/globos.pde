@@ -11,8 +11,8 @@ class Globo
 
   void update()
   {
-    y=y+vy ;//+ random(-5,5); epilepsia
-    x=x+vx; //+ random(-5,5); epilepsia
+    y=y+vy + random(-15,15); 
+    x=x+vx+ random(-15,15); 
   }
 
   void dibujate()
@@ -47,6 +47,6 @@ void draw()
 
 void mousePressed()
 {
-  for(int l= 0; l< 300; l++){
+  for(int l= 0; l< 4000; l++){
   globos.add(new Globo(mouseX,mouseY));}
 }
