@@ -5,19 +5,21 @@ class Globo
   {
    x=_x;
    y=_y; 
-   vx=random(-0.25,0.25);
-   vy=random(-2,-0.5);
+   vx=random(-5,5);
+   vy=random(-5, 5);
   }
 
   void update()
   {
-    y+=vy;
-    x+=vx;
+    y=y+vy ;//+ random(-5,5); epilepsia
+    x=x+vx; //+ random(-5,5); epilepsia
   }
 
   void dibujate()
   {
-      ellipse(x,y,1000,100);
+    
+    for(int k = 0; k<1; k++){
+      ellipse(x,y,5,5);}
   }
   
 }
@@ -33,16 +35,18 @@ void setup()
 
 void draw()
 {
-  background(0);
+  int a = 0;
+  background(a);
   for(int i=0;i<globos.size();i++)
   {
     globos.get(i).update();
-    for(int j = 0; j<10; j++){
     globos.get(i).dibujate();
-  }}
+
+  }
 }
 
 void mousePressed()
 {
-  globos.add(new Globo(mouseX,mouseY));
+  for(int l= 0; l< 300; l++){
+  globos.add(new Globo(mouseX,mouseY));}
 }
