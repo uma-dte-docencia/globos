@@ -11,8 +11,8 @@ class Globo
 
   void update()
   {
-    y=y+vy + random(-15,15); 
-    x=x+vx+ random(-15,15); 
+    y=y+vy + random(-1,1); 
+    x=x+vx+ random(-1,1); 
   }
 
   void dibujate()
@@ -29,14 +29,14 @@ ArrayList<Globo> globos;
 
 void setup()
 {
-  size(640,480);
+  size(1024,800);
   globos = new ArrayList<Globo>();  
 }
 
 void draw()
 {
-  int a = 0;
-  background(a);
+ // int a = 0;
+//  background(a);
   for(int i=0;i<globos.size();i++)
   {
     globos.get(i).update();
@@ -47,6 +47,6 @@ void draw()
 
 void mousePressed()
 {
-  for(int l= 0; l< 4000; l++){
+  for(int l= 0; l< 5000; l++){
   globos.add(new Globo(mouseX,mouseY));}
 }
