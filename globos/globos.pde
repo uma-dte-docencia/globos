@@ -29,7 +29,9 @@ ArrayList<Globo> globos;
 
 void setup()
 {
+  
   size(1024,800);
+  background(80000);
   globos = new ArrayList<Globo>();  
 }
 
@@ -48,5 +50,6 @@ void draw()
 void mousePressed()
 {
   for(int l= 0; l< 5000; l++){
-  globos.add(new Globo(mouseX,mouseY));}
+  globos.add(new Globo(mouseX,mouseY));
+}
 }
