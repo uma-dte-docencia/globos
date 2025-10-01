@@ -5,19 +5,21 @@ class Globo
   {
    x=_x;
    y=_y; 
-   vx=random(-0.25,0.25);
-   vy=random(-2,-0.5);
+   vx=random(-5,5);
+   vy=random(-5, 5);
   }
 
   void update()
   {
-    y+=vy;
-    x+=vx;
+    y=y+vy + random(-1,1); 
+    x=x+vx+ random(-1,1); 
   }
 
   void dibujate()
   {
-      ellipse(x,y,100,100);
+    
+    for(int k = 0; k<1; k++){
+      ellipse(x,y,5,5);}
   }
   
 }
@@ -27,21 +29,27 @@ ArrayList<Globo> globos;
 
 void setup()
 {
-  size(640,480);
+  
+  size(1024,800);
+  background(80000);
   globos = new ArrayList<Globo>();  
 }
 
 void draw()
 {
-  background(0);
+ // int a = 0;
+//  background(a);
   for(int i=0;i<globos.size();i++)
   {
     globos.get(i).update();
     globos.get(i).dibujate();
+
   }
 }
 
 void mousePressed()
 {
+  for(int l= 0; l< 5000; l++){
   globos.add(new Globo(mouseX,mouseY));
+}
 }
