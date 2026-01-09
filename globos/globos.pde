@@ -14,26 +14,28 @@ class Globo
     y+=vy;
     x+=vx;
   }
-
+//yeison gei
   void dibujate()
   {
-      ellipse(x,y,100,100);
+      ellipse(x,y,50,50);
+      image(cara,x-25,y-25,50,50);
   }
   
 }
 
 ArrayList<Globo> globos;
-
+PImage cara;
 
 void setup()
 {
   size(640,480);
   globos = new ArrayList<Globo>();  
+  cara=loadImage("noFilter.png");
 }
 
 void draw()
 {
-  background(0);
+  background(255,255,255);
   for(int i=0;i<globos.size();i++)
   {
     globos.get(i).update();
