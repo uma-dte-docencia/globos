@@ -1,5 +1,7 @@
+PImage cara;
 class Globo
 {
+  color c;
   float x, y,vx,vy;
   Globo (float _x, float _y)
   {
@@ -7,6 +9,11 @@ class Globo
    y=_y; 
    vx=random(-0.25,0.25);
    vy=random(-2,-0.5);
+   c = color(random(0, 254),
+             random(100,250),
+             random(2, 240));
+             
+   
   }
 
   void update()
@@ -17,7 +24,10 @@ class Globo
 
   void dibujate()
   {
-      ellipse(x,y,100,100);
+      fill(c);
+      strokeWeight(3);
+      ellipse(x,y,70,100);
+      image(cara, x , y);
   }
   
 }
@@ -29,11 +39,12 @@ void setup()
 {
   size(640,480);
   globos = new ArrayList<Globo>();  
+  cara = loadImage("Obama-cara.jpg");
 }
 
 void draw()
 {
-  background(0);
+  background(0100,220,255);
   for(int i=0;i<globos.size();i++)
   {
     globos.get(i).update();
