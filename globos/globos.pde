@@ -15,25 +15,33 @@ class Globo
     x+=vx;
   }
 
+  PImage cara;
   void dibujate()
   {
-      ellipse(x,y,100,100);
+      cara = loadImage("axel.png");
+      rectMode(CENTER);
+      rect(x,y,200,200);
+      image(cara,x,y,100,100);
+      
   }
   
 }
 
 ArrayList<Globo> globos;
 
+PImage teleco;
 
 void setup()
 {
   size(640,480);
   globos = new ArrayList<Globo>();  
+  teleco = loadImage("teleco.jpg");
 }
 
 void draw()
 {
-  background(0);
+  background(30 , 200 , 70);
+  image(teleco,0,0);
   for(int i=0;i<globos.size();i++)
   {
     globos.get(i).update();
