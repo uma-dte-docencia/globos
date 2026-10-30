@@ -1,12 +1,14 @@
 class Globo
 {
   float x, y,vx,vy;
+  color c;
   Globo (float _x, float _y)
   {
    x=_x;
    y=_y; 
    vx=random(-0.25,0.25);
    vy=random(-2,-0.5);
+   c = color(random(0,255),random(0,255),100);
   }
 
   void update()
@@ -17,6 +19,7 @@ class Globo
 
   void dibujate()
   {
+    fill(c);
       ellipse(x,y,100,100);
   }
   
@@ -24,16 +27,18 @@ class Globo
 
 ArrayList<Globo> globos;
 
-
+PImage goku;
 void setup()
 {
   size(640,480);
   globos = new ArrayList<Globo>();  
+  goku = loadImage("goku.png");
 }
 
 void draw()
 {
-  background(0);
+  background(0,100,250);
+  image(goku, 0, 0);
   for(int i=0;i<globos.size();i++)
   {
     globos.get(i).update();
